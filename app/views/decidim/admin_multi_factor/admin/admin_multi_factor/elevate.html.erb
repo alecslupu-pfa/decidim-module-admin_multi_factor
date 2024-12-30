@@ -1,0 +1,58 @@
+<% add_decidim_page_title(t(".elevate_access")) %>
+
+<div class="wrapper">
+  <div class="row collapse">
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t(".elevate_access") %></h1>
+
+        <p>
+          <%= t(".elevate_access_description") %>
+        </p>
+      </div>
+    </div>
+
+    <% if admin_auth_settings.email? %>
+      <div class="row">
+        <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
+          <div class="social-register">
+            <%= link_to select_elevation_strategy_path(strategy: :email) , class: "button button--social button-primary", method: :post do %>
+              <span class="button--social__text">
+                <%= t(".email") %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if admin_auth_settings.sms? %>
+      <div class="row">
+        <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
+          <div class="social-register">
+            <%= link_to select_elevation_strategy_path(strategy: :sms) , class: "button button--social button-primary", method: :post do %>
+              <span class="button--social__text">
+                <%= t(".sms") %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if admin_auth_settings.webauthn? %>
+      <div class="row">
+        <div class="columns large-4 mediumlarge-6 medium-8 medium-centered">
+          <div class="social-register">
+            <%= link_to select_elevation_strategy_path(strategy: :webauthn), class: "button button--social button-primary", method: :post do %>
+              <span class="button--social__text">
+                <%= t(".webauthn") %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

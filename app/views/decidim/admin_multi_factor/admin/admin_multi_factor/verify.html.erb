@@ -1,0 +1,43 @@
+<div class="content">
+  <div class="wrapper">
+    <div class="row">
+      <div class="columns medium-12 large-10 text-center small-centered page-title">
+        <h1><%= t(".welcome", organization: current_organization.name).html_safe %></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 smallmedium-10 mediumlarge-8 large-6 small-centered" id="select-wrapper">
+        <div class="card">
+          <div class="card__content">
+            <h2 class="text-center"><%= t(".enter_code") %></h2>
+            <p class="text-center">
+              <%= t(".instruction", contact_info: @info) %>
+            </p>
+            <%= decidim_form_for(@form, url: verify_submitted_code_path, method: :post) do |form| %>
+              <div class="columns small-12 smallmedium-10 medium-8 small-centered">
+                <div id="verification" class="flex-digits">
+                  <% Decidim::AdminMultiFactor.auth_code_length.times do |ind| %>
+                    <div class="flex-digits-input">
+                      <input type="number" pattern="\d*" min="0" max="9" name="<%= "digit#{ind + 1}" %>" autocomplete="off" aria-label="<%= t(".inputs", count: ind + 1) %>">
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              <br/>
+              <span class="form-error is-invisible" role="alert" id="verification-error"><%= t("decidim.forms.errors.error") %></span>
+              <%= form.hidden_field :verification %>
+              <div class="columns small-8 small-centered">
+                <%= form.submit t(".submit"), class:"button expanded" %>
+              </div>
+            <% end %>
+            <p class="text-center">
+              <%= t(".have_not_received") %>
+              <%= link_to t(".resend_code"), select_elevation_strategy_path(strategy: :email, resent: true), method: :post %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "decidim_admin_multi_factor" %>

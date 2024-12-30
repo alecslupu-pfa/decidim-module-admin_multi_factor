@@ -1,0 +1,13 @@
+<h1 class="text-center"><%= t(".title") %></h1>
+
+<p class="email-instructions text-center"><%= t(".subtitle_html", organization: link_to(@organization.name, confirm_path_url)) %></p>
+
+<h3 class="email-instruction text-center" style="margin:1em 0 0.2em 0;"><%= t(".copy") %></h3>
+
+<p class="stat text-center" style="margin:1em 0 0.5em 0;"><b style="font-size: 2em"><%= @verification %></b></p>
+
+<% if @expires_at %>
+  <p class="email-small text-center" style="margin-bottom: 2em;"><%= t(".expires_in", time: distance_of_time_in_words(Time.now, @expires_at)) %></p>
+<% end %>
+
+<p class="email-small email-closing text-center"><%= t(".ignore_html") %></p>

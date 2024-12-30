@@ -1,0 +1,28 @@
+<%= decidim_form_for(@form, html: { class: "form edit_organization" }, url: admin_multi_login_path) do |f| %>
+  <div class="card">
+    <div class="card-divider">
+      <h2 class="card-title"><%= t ".title" %></h2>
+    </div>
+    <div class="card-section">
+      <div class="wrapper">
+        <div class="row">
+          <div class="field">
+            <%= f.check_box :enable_multifactor, help_text: t(".enable_admin_multifactor_help_html") %>
+          </div>
+          <div class="field">
+            <%= f.check_box :email, help_text: t(".email_help_html") %>
+          </div>
+<!--          <div class="field">-->
+            <%#= f.check_box :sms, help_text: t(".sms_help_html") %>
+<!--          </div>-->
+<!--          <div class="field">-->
+            <%#= f.check_box :webauthn, help_text: t(".webauthn_help_html") %>
+<!--          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="button--double form-general-submit">
+    <%= f.submit t(".update") %>
+  </div>
+<% end %>
