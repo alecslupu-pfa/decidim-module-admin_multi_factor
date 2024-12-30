@@ -1,5 +1,6 @@
 ---
 en:
+
   decidim:
     admin_multi_factor:
       admin:
@@ -11,6 +12,10 @@ en:
             email: Email
             sms: SMS
             webauthn: WebAuthn
+          sms:
+            success: Verification code sent to %{phone_number}.
+            error: An error occurred which has been logged, please try again. If the
+              error persists, please contact the platform support for further help.
           email:
             copy: 'Copy this code:'
             error: An error occurred which has been logged, please try again. If the
