@@ -29,8 +29,7 @@ module Decidim
         end
       end
 
-
-      initializer "decidim_admin_multi_factor.add_menu",  before: "decidim_admin.admin_settings_menu" do
+      initializer "decidim_admin_multi_factor.add_menu", before: "decidim_admin.admin_settings_menu" do
         Decidim.menu :admin_settings_menu do |menu|
           menu.add_item :edit_authorization,
                         I18n.t("menu.admin_multifactor", scope: "decidim.decidim_admin_multi_factor"),
@@ -44,7 +43,6 @@ module Decidim
       def load_seed
         nil
       end
-
     end
   end
 end

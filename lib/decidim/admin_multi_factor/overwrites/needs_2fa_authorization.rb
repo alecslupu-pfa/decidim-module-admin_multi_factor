@@ -30,7 +30,6 @@ module Decidim
           def admin_auth_settings
             @admin_auth_settings ||= Decidim::AdminMultiFactor::Setting.where(organization: current_organization).first_or_create
           end
-
         end
       end
     end

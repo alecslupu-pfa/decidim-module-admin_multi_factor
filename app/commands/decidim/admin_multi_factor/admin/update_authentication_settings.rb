@@ -15,6 +15,7 @@ module Decidim
           update_admin_login_settings
           broadcast(:ok)
         end
+
         private
 
         attr_reader :form

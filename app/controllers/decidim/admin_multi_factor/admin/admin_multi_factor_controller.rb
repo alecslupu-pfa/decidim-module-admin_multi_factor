@@ -21,12 +21,13 @@ module Decidim
         end
 
         def verify
-          return redirect_to decidim_admin_multi_factor_admin.elevate_path unless auth_session.present?
+          return redirect_to decidim_admin_multi_factor_admin.elevate_path if auth_session.blank?
+
           @form = form(::Decidim::AdminMultiFactor::VerificationCodeForm).instance
         end
 
         def verify_submitted_code
-          return redirect_to decidim_admin_multi_factor_admin.elevate_path unless auth_session.present?
+          return redirect_to decidim_admin_multi_factor_admin.elevate_path if auth_session.blank?
 
           if auth_session[:code] == params[:verification_code][:verification]
             session[:auth_verified] = true
@@ -40,7 +41,7 @@ module Decidim
         end
 
         def email
-          redirect_to_back and return unless admin_auth_settings.email?
+          redirect_to_back && return unless admin_auth_settings.email?
 
           SendEmailVerification.call(current_user) do
             on(:ok) do |result, expires_at|
@@ -49,7 +50,7 @@ module Decidim
               redirect_to action: "verify"
             end
 
-            on(:invalid) do |error_code|
+            on(:invalid) do |_error_code|
               flash.now[:alert] = I18n.t("error", scope: "decidim.admin_multi_factor.admin.admin_multi_factor.email")
               render action: "elevate"
             end
@@ -59,6 +60,7 @@ module Decidim
         protected
 
         def enforce_2fa; end
+
         def extended_rights_required; end
 
         private
@@ -76,7 +78,7 @@ module Decidim
         end
 
         def auth_session
-          (session[:auth_attempt].presence || {} ).with_indifferent_access
+          (session[:auth_attempt].presence || {}).with_indifferent_access
         end
 
         def auth_verified_session
@@ -89,7 +91,6 @@ module Decidim
         #   ).format
         # end
       end
-
     end
   end
 end

@@ -41,17 +41,17 @@ module Decidim
       end
 
       def expires_at
-        @expires_at ||= Time.now + Decidim::AdminMultiFactor.code_ttl
+        @expires_at ||= Time.zone.now + Decidim::AdminMultiFactor.code_ttl
       end
 
       def send_email_verification!
         return false unless Decidim::AdminMultiFactor::VerificationCodeMailer
-                              .verification_code(
-                                email: user.email,
-                                verification: verification_code,
-                                organization: user.organization,
-                                expires_at: expires_at
-                              ).deliver_later
+                            .verification_code(
+                              email: user.email,
+                              verification: verification_code,
+                              organization: user.organization,
+                              expires_at: expires_at
+                            ).deliver_later
 
         verification_code
       end
