@@ -1,8 +1,18 @@
 ---
 en:
+
   decidim:
     admin_multi_factor:
       admin:
+        sms_strategy:
+          sms:
+            type_in_phone: Type in the Phone number
+            enter_phone_number: Enter Phone Number
+            step_one: Step One
+            title: FOOO
+            submit: Submit
+            have_not_received: You have not received it?
+            resend_code: Resend code
         admin_multi_factor:
           elevate:
             elevate_access: Elevate access rights

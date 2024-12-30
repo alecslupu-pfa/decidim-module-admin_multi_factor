@@ -2,6 +2,7 @@
 
 require "rails"
 require "decidim/core"
+require "countries"
 
 module Decidim
   module AdminMultiFactor

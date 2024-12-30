@@ -8,6 +8,12 @@ module Decidim
 
         included do
 
+          layout "decidim/application"
+
+          before_action :authenticate_user!
+
+          helper_method :current_user_impersonated?, :admin_auth_settings
+
           protected
 
           def enforce_2fa; end

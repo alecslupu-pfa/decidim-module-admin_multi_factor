@@ -13,12 +13,14 @@ module Decidim
         get "/elevate", to: "admin_multi_factor#elevate", as: :elevate
         # get "/elevate/verify", to: "admin_multi_factor#verify", as: :verify_strategy
         post "/elevate/verify", to: "admin_multi_factor#verify_submitted_code", as: :verify_submitted_code
-        post "/elevate/sms", to: "admin_multi_factor#sms", as: :select_sms_strategy
-
 
         post "/elevate/email", to: "email_strategy#email", as: :select_email_strategy
         get "/elevate/email/verify", to: "email_strategy#verify", as: :verify_email_strategy
-        # post "/elevate/email/verify", to: "admin_multi_factor#verify_submitted_code", as: :verify_submitted_code
+
+
+        post "/elevate/sms", to: "sms_strategy#sms", as: :select_sms_strategy
+        get "/elevate/sms/verify", to: "sms_strategy#verify", as: :verify_sms_strategy
+
 
 
         post "/elevate/webauthn", to: "admin_multi_factor#webauthn", as: :select_webauthn_strategy

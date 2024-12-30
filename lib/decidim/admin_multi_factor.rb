@@ -18,6 +18,12 @@ module Decidim
       4
     end
 
+    # The country or countries to be selected in country selection
+    # during sms verification/authentication. The default is being set to nil
+    config_accessor :default_countries do
+      nil
+    end
+
     config_accessor :code_ttl do
       5.minutes
     end

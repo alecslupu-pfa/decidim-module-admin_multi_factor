@@ -7,12 +7,6 @@ module Decidim
         include FormFactory
         include AdminMultiFactorConcern
 
-        layout "decidim/application"
-
-        before_action :authenticate_user!
-
-        helper_method :current_user_impersonated?, :admin_auth_settings
-
         def email
           redirect_to_back && return unless admin_auth_settings.email?
 

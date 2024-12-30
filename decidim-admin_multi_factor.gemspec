@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
         f.start_with?(*%w(app/ config/ db/ lib/ LICENSE-AGPLv3.txt Rakefile README.md))
     end
   end
-
+  
+  s.add_dependency "countries", "~> 5.1", ">= 5.1.2"
   s.add_dependency "decidim-core", Decidim::AdminMultiFactor.version
 end

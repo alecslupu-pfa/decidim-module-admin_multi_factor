@@ -4,6 +4,11 @@ module Decidim
   module AdminMultiFactor
     class SendSmsVerification < BaseVerification
 
+      def initialize(form, user)
+        @form = form
+        @user = user
+      end
+
       def call
         result = send_sms_verification!
 
