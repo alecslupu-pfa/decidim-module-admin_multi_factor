@@ -1,6 +1,5 @@
 ---
 en:
-
   decidim:
     admin_multi_factor:
       admin:
@@ -12,10 +11,6 @@ en:
             email: Email
             sms: SMS
             webauthn: WebAuthn
-          sms:
-            success: Verification code sent to %{phone_number}.
-            error: An error occurred which has been logged, please try again. If the
-              error persists, please contact the platform support for further help.
           email:
             copy: 'Copy this code:'
             error: An error occurred which has been logged, please try again. If the
@@ -30,16 +25,13 @@ en:
               it!
             success: Verification code sent to %{email}.
             title: Your 2Factor Authentication
+          sms:
+            error: An error occurred which has been logged, please try again. If the
+              error persists, please contact the platform support for further help.
+            success: Verification code sent to %{phone_number}.
           verify:
-            enter_code: 'Please enter the code:'
             error: The code entered is not valid
-            have_not_received: You have not received it?
-            inputs: digit number %{count}
-            instruction: You should have received the code to %{contact_info}
-            resend_code: Resend code
-            submit: Submit
             success: Verification successful
-            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
         admin_multi_logins:
           edit:
             email_help_html: Admin receives the login code via email
@@ -50,6 +42,15 @@ en:
             title: 'Security - two factor authentication (2FA) '
             update: Update
             webauthn_help_html: Admin logins using webauthn
+        email_strategy:
+          verify:
+            enter_code: 'Please enter the code:'
+            have_not_received: You have not received it?
+            inputs: digit number %{count}
+            instruction: You should have received the code to %{contact_info}
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
     components:
       admin_multi_factor:
         name: AdminMultiFactor
