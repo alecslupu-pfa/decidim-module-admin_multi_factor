@@ -1,0 +1,66 @@
+---
+fr:
+  decidim:
+    admin_multi_factor:
+      admin:
+        admin_multi_factor:
+          elevate:
+            elevate_access: Élever les droits d'accès
+            elevate_access_description: Pour accéder à l'interface d'administration, une authentification à deux facteurs est requise. Veuillez choisir votre méthode de vérification.
+            email: Email
+            sms: SMS
+            webauthn: WebAuthn
+          email:
+            copy: 'Copiez ce code :'
+            error: Une erreur est survenue, veuillez réessayer. Si l'erreur persiste, veuillez contacter le support de la plateforme pour plus d'aide.
+            expires_in: Il va expirer dans %{time}.
+            ignore_html: |-
+              Si vous n'avez pas demandé à recevoir cette communication, veuillez ignorer cet email.<br />
+              Votre compte ne sera pas actif tant que votre compte n'est pas confirmé.
+            subject: 'Votre code d''authentification est : %{verification}'
+            subtitle: Pour finaliser l'authentification, il vous suffit de copier le code à 4 chiffres ci-dessous, retournez à la page de vérification %{organization} et collez-le.
+            success: Code de vérification envoyé à %{email}.
+            title: Votre authentification à deux facteurs
+          sms:
+            error: Une erreur est survenue, veuillez réessayer. Si l'erreur persiste, veuillez contacter le support de la plateforme pour plus d'aide.
+            success: Code de vérification envoyé à %{phone_number}.
+          verify:
+            error: Le code saisi n'est pas valide
+            success: Vérification réussie
+        admin_multi_logins:
+          edit:
+            email_help_html: L'administrateur reçoit le code de connexion par email
+            enable_admin_multifactor_help_html: Activer l'authentification à double facteur (2FA) pour renforcer la sécurité des comptes administrateurs et protéger l'accès aux données sensibles de la plateforme
+            sms_help_html: L'administrateur reçoit le code de connexion par sms
+            title: 'Sécurité - authentification à deux facteurs (2FA) '
+            update: Mettre à jour
+            webauthn_help_html: Identifiants administrateur en utilisant webauthn
+        email_strategy:
+          verify:
+            enter_code: 'Veuillez saisir le code :'
+            have_not_received: Vous ne l'avez pas reçu?
+            inputs: nombre de chiffres %{count}
+            instruction: Vous devriez avoir reçu le code sur %{contact_info}
+            resend_code: Renvoyer le code
+            submit: Soumettre
+            welcome: Bienvenue sur la plateforme <br><strong>%{organization} !</strong>
+        sms_strategy:
+          sms:
+            have_not_received: Vous ne l'avez pas reçu?
+            resend_code: Renvoyer le code
+            submit: Soumettre
+            welcome: Bienvenue sur la plateforme <br><strong>%{organization} !</strong>
+          verify_sms_code:
+            enter_code: 'Veuillez saisir le code :'
+            have_not_received: Vous ne l'avez pas reçu?
+            inputs: nombre de chiffres %{count}
+            instruction: Vous devriez avoir reçu le code au %{contact_info}
+            resend_code: Renvoyer le code
+            submit: Soumettre
+            welcome: Bienvenue sur la plateforme <br><strong>%{organization} !</strong>
+    components:
+      admin_multi_factor:
+        name: AdminMultiFactor
+    decidim_admin_multi_factor:
+      menu:
+        admin_multifactor: Paramètres d'authentification à deux facteurs

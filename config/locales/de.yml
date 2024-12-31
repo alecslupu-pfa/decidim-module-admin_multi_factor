@@ -1,0 +1,66 @@
+---
+de:
+  decidim:
+    admin_multi_factor:
+      admin:
+        admin_multi_factor:
+          elevate:
+            elevate_access: Elevate access rights
+            elevate_access_description: In order to access the admin panel, you need to elevate your access rights. Please select your method.
+            email: Email
+            sms: SMS
+            webauthn: WebAuthn
+          email:
+            copy: 'Copy this code:'
+            error: An error occurred which has been logged, please try again. If the error persists, please contact the platform support for further help.
+            expires_in: It will expire in %{time}.
+            ignore_html: |-
+              If you didn't request this communication, please ignore this email.<br />
+              Your account won't be active until your account is fully confirmed.
+            subject: 'Your auth code is: %{verification}'
+            subtitle: To finalize the authentication you just need to copy the 4 digit code below, go back to the %{organization} verification page and paste it!
+            success: Verification code sent to %{email}.
+            title: Your 2Factor Authentication
+          sms:
+            error: An error occurred which has been logged, please try again. If the error persists, please contact the platform support for further help.
+            success: Verification code sent to %{phone_number}.
+          verify:
+            error: The code entered is not valid
+            success: Verification successful
+        admin_multi_logins:
+          edit:
+            email_help_html: Admin receives the login code via email
+            enable_admin_multifactor_help_html: Add an extra security step when admins log in to ensure a higher level of protection for the platform and it's data
+            sms_help_html: Admin receives the login code via sms
+            title: 'Security - two factor authentication (2FA) '
+            update: Update
+            webauthn_help_html: Admin logins using webauthn
+        email_strategy:
+          verify:
+            enter_code: 'Please enter the code:'
+            have_not_received: You have not received it?
+            inputs: digit number %{count}
+            instruction: You should have received the code to %{contact_info}
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+        sms_strategy:
+          sms:
+            have_not_received: You have not received it?
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+          verify_sms_code:
+            enter_code: 'Please enter the code:'
+            have_not_received: You have not received it?
+            inputs: digit number %{count}
+            instruction: You should have received the code to %{contact_info}
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+    components:
+      admin_multi_factor:
+        name: AdminMultiFactor
+    decidim_admin_multi_factor:
+      menu:
+        admin_multifactor: Multi factor settings

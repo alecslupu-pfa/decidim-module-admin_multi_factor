@@ -1,0 +1,66 @@
+---
+ro:
+  decidim:
+    admin_multi_factor:
+      admin:
+        admin_multi_factor:
+          elevate:
+            elevate_access: Creșteți nivelul drepturilor de acces
+            elevate_access_description: Pentru a accesa panoul de administrare, trebuie să creșteți nivelul drepturilor de acces. Vă rugăm să selectați metoda.
+            email: E-mail
+            sms: SMS
+            webauthn: WebAuthn
+          email:
+            copy: 'Copiați acest cod:'
+            error: A apărut o eroare care a fost înregistrată, vă rugăm să încercați din nou. Dacă eroarea persistă, contactați echipa de suport a platformei pentru asistență suplimentară.
+            expires_in: Va expira în %{time}.
+            ignore_html: |-
+              Dacă nu ați solicitat această comunicare, vă rugăm să ignorați acest e-mail.<br />
+              Contul dvs. nu va fi activ până când contul dvs. nu va fi pe deplin confirmat.
+            subject: 'Codul dvs. de autentificare este: %{verification}'
+            subtitle: Pentru a finaliza autentificarea trebuie doar să copiați codul de 4 cifre de mai jos, mergeți înapoi la pagina de verificare al %{organization} și inserați-l!
+            success: Codul de verificare trimis către %{email}.
+            title: Autentificarea dumneavoastră cu doi factori
+          sms:
+            error: A apărut o eroare care a fost înregistrată, vă rugăm să încercați din nou. Dacă eroarea persistă, contactați echipa de suport a platformei pentru asistență suplimentară.
+            success: Codul de verificare trimis către %{phone_number}.
+          verify:
+            error: Codul introdus nu este corect
+            success: Verificare reușită
+        admin_multi_logins:
+          edit:
+            email_help_html: Administratorul primește codul de autentificare prin e-mail
+            enable_admin_multifactor_help_html: Adaugați un pas suplimentar de securitate atunci când administratorii se autentifică pentru a asigura un nivel mai ridicat de protecție pentru platformă și date
+            sms_help_html: Administratorul primește codul de autentificare prin sms
+            title: 'Securitate - autentificare cu doi factori (2FA) '
+            update: Actualizați
+            webauthn_help_html: Administratorul se autentifica folosind WebAuthn
+        email_strategy:
+          verify:
+            enter_code: 'Vă rugăm să introduceţi codul:'
+            have_not_received: Nu l-ați primit?
+            inputs: cifră număr %{count}
+            instruction: Ar fi trebuit să primiți codul pentru %{contact_info}
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
+        sms_strategy:
+          sms:
+            have_not_received: Nu l-ați primit?
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
+          verify_sms_code:
+            enter_code: 'Vă rugăm să introduceți codul:'
+            have_not_received: Nu l-ați primit?
+            inputs: cifră număr %{count}
+            instruction: Ar fi trebuit să primiți codul pentru %{contact_info}
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
+    components:
+      admin_multi_factor:
+        name: AdminMultiFactor
+    decidim_admin_multi_factor:
+      menu:
+        admin_multifactor: Setări autentificare multi-factor
