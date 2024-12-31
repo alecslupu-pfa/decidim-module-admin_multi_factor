@@ -5,62 +5,62 @@ ro:
       admin:
         admin_multi_factor:
           elevate:
-            elevate_access: Elevate access rights
-            elevate_access_description: In order to access the admin panel, you need to elevate your access rights. Please select your method.
+            elevate_access: Creșteți nivelul drepturilor de acces
+            elevate_access_description: Pentru a accesa panoul de administrare, trebuie să creșteți nivelul drepturilor de acces. Vă rugăm să selectați metoda.
             email: E-mail
             sms: SMS
             webauthn: WebAuthn
           email:
             copy: 'Copiați acest cod:'
-            error: An error occurred which has been logged, please try again. If the error persists, please contact the platform support for further help.
-            expires_in: It will expire in %{time}.
+            error: A apărut o eroare care a fost înregistrată, vă rugăm să încercați din nou. Dacă eroarea persistă, contactați echipa de suport a platformei pentru asistență suplimentară.
+            expires_in: Va expira în %{time}.
             ignore_html: |-
-              If you didn't request this communication, please ignore this email.<br />
-              Your account won't be active until your account is fully confirmed.
+              Dacă nu ați solicitat această comunicare, vă rugăm să ignorați acest e-mail.<br />
+              Contul dvs. nu va fi activ până când contul dvs. nu va fi pe deplin confirmat.
             subject: 'Codul dvs. de autentificare este: %{verification}'
             subtitle: Pentru a finaliza autentificarea trebuie doar să copiați codul de 4 cifre de mai jos, mergeți înapoi la pagina de verificare al %{organization} și inserați-l!
             success: Codul de verificare trimis către %{email}.
-            title: Your 2Factor Authentication
+            title: Autentificarea dumneavoastră cu doi factori
           sms:
-            error: An error occurred which has been logged, please try again. If the error persists, please contact the platform support for further help.
-            success: Verification code sent to %{phone_number}.
+            error: A apărut o eroare care a fost înregistrată, vă rugăm să încercați din nou. Dacă eroarea persistă, contactați echipa de suport a platformei pentru asistență suplimentară.
+            success: Codul de verificare trimis către %{phone_number}.
           verify:
             error: Codul introdus nu este corect
-            success: Verification successful
+            success: Verificare reușită
         admin_multi_logins:
           edit:
-            email_help_html: Admin receives the login code via email
-            enable_admin_multifactor_help_html: Add an extra security step when admins log in to ensure a higher level of protection for the platform and it's data
-            sms_help_html: Admin receives the login code via sms
-            title: 'Security - two factor authentication (2FA) '
-            update: Update
-            webauthn_help_html: Admin logins using webauthn
+            email_help_html: Administratorul primește codul de autentificare prin e-mail
+            enable_admin_multifactor_help_html: Adaugați un pas suplimentar de securitate atunci când administratorii se autentifică pentru a asigura un nivel mai ridicat de protecție pentru platformă și date
+            sms_help_html: Administratorul primește codul de autentificare prin sms
+            title: 'Securitate - autentificare cu doi factori (2FA) '
+            update: Actualizați
+            webauthn_help_html: Administratorul se autentifica folosind WebAuthn
         email_strategy:
           verify:
-            enter_code: 'Please enter the code:'
-            have_not_received: You have not received it?
-            inputs: digit number %{count}
-            instruction: You should have received the code to %{contact_info}
-            resend_code: Resend code
-            submit: Submit
-            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+            enter_code: 'Vă rugăm să introduceţi codul:'
+            have_not_received: Nu l-ați primit?
+            inputs: cifră număr %{count}
+            instruction: Ar fi trebuit să primiți codul pentru %{contact_info}
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
         sms_strategy:
           sms:
-            have_not_received: You have not received it?
-            resend_code: Resend code
-            submit: Submit
-            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+            have_not_received: Nu l-ați primit?
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
           verify_sms_code:
-            enter_code: 'Please enter the code:'
-            have_not_received: You have not received it?
-            inputs: digit number %{count}
-            instruction: You should have received the code to %{contact_info}
-            resend_code: Resend code
-            submit: Submit
-            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+            enter_code: 'Vă rugăm să introduceți codul:'
+            have_not_received: Nu l-ați primit?
+            inputs: cifră număr %{count}
+            instruction: Ar fi trebuit să primiți codul pentru %{contact_info}
+            resend_code: Retrimiteți codul
+            submit: Aplicați
+            welcome: Bine ați venit pe platforma <br><strong>%{organization}!</strong>
     components:
       admin_multi_factor:
         name: AdminMultiFactor
     decidim_admin_multi_factor:
       menu:
-        admin_multifactor: Multi factor settings
+        admin_multifactor: Setări autentificare multi-factor
