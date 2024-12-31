@@ -3,7 +3,6 @@
 module Decidim
   module AdminMultiFactor
     class SendEmailVerification < BaseVerification
-
       def call
         result = send_email_verification!
 
@@ -17,10 +16,6 @@ module Decidim
       private
 
       attr_reader :user
-
-      def verification_code
-        @verification_code ||= generate_code
-      end
 
       def send_email_verification!
         return false unless Decidim::AdminMultiFactor::VerificationCodeMailer

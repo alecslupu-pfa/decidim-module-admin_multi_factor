@@ -15,21 +15,19 @@ module Decidim
           end
         end
 
-
         def verify_submitted_code
           return redirect_to decidim_admin_multi_factor_admin.elevate_path if auth_session.blank?
 
           if auth_session[:code] == params[:verification_code][:verification]
-            session[:auth_verified] = true
             init_sessions!
+            session[:auth_verified] = true
             flash[:notice] = I18n.t("success", scope: "decidim.admin_multi_factor.admin.admin_multi_factor.verify")
             redirect_to decidim.decidim_admin_path
           else
             flash[:alert] = I18n.t("error", scope: "decidim.admin_multi_factor.admin.admin_multi_factor.verify")
-            redirect_to decidim_admin_multi_factor_admin.verify_email_strategy_path
+            redirect_to decidim_admin_multi_factor_admin.send(:"verify_#{auth_session[:strategy]}_strategy_path")
           end
         end
-
       end
     end
   end

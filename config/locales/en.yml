@@ -1,18 +1,8 @@
 ---
 en:
-
   decidim:
     admin_multi_factor:
       admin:
-        sms_strategy:
-          sms:
-            type_in_phone: Type in the Phone number
-            enter_phone_number: Enter Phone Number
-            step_one: Step One
-            title: FOOO
-            submit: Submit
-            have_not_received: You have not received it?
-            resend_code: Resend code
         admin_multi_factor:
           elevate:
             elevate_access: Elevate access rights
@@ -54,6 +44,20 @@ en:
             webauthn_help_html: Admin logins using webauthn
         email_strategy:
           verify:
+            enter_code: 'Please enter the code:'
+            have_not_received: You have not received it?
+            inputs: digit number %{count}
+            instruction: You should have received the code to %{contact_info}
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+        sms_strategy:
+          sms:
+            have_not_received: You have not received it?
+            resend_code: Resend code
+            submit: Submit
+            welcome: Welcome to the <br><strong>%{organization} platform!</strong>
+          verify_sms_code:
             enter_code: 'Please enter the code:'
             have_not_received: You have not received it?
             inputs: digit number %{count}

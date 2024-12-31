@@ -7,9 +7,10 @@ module Decidim
         include FormFactory
         include AdminMultiFactorConcern
 
-        def email
-          redirect_to_back && return unless admin_auth_settings.email?
+        before_action :check_config, only: [:email, :verify]
+        before_action :restrict_access, only: [:email, :verify]
 
+        def email
           SendEmailVerification.call(current_user) do
             on(:ok) do |result, expires_at|
               init_sessions!({ code: result, expires_at: expires_at, email: current_user.email, strategy: :email })
@@ -30,6 +31,13 @@ module Decidim
           @form = form(::Decidim::AdminMultiFactor::VerificationCodeForm).instance
         end
 
+        protected
+
+        def check_config
+          return if admin_auth_settings.email?
+
+          redirect_to_back and return
+        end
       end
     end
   end

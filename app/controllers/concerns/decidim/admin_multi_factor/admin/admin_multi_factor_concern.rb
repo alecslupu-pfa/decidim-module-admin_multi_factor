@@ -7,7 +7,6 @@ module Decidim
         extend ActiveSupport::Concern
 
         included do
-
           layout "decidim/application"
 
           before_action :authenticate_user!
@@ -15,6 +14,12 @@ module Decidim
           helper_method :current_user_impersonated?, :admin_auth_settings
 
           protected
+
+          def restrict_access
+            return unless auth_verified_session
+
+            redirect_to decidim_admin.root_path and return
+          end
 
           def enforce_2fa; end
 
@@ -39,7 +44,7 @@ module Decidim
           end
 
           def auth_verified_session
-            auth_session[:auth_verified]
+            session[:auth_verified]
           end
         end
       end

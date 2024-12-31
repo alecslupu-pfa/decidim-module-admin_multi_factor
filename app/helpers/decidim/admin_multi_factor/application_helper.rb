@@ -28,7 +28,6 @@ module Decidim
         ]
       end
 
-
       def unshift_defaults(unsorted)
         Decidim::AdminMultiFactor.default_countries&.reverse&.each do |alph2|
           country = ISO3166::Country.find_country_by_alpha2(alph2)

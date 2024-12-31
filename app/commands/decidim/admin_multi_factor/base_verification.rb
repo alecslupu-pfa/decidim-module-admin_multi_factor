@@ -3,12 +3,15 @@
 module Decidim
   module AdminMultiFactor
     class BaseVerification < Decidim::Command
-
       def initialize(user)
         @user = user
       end
 
       protected
+
+      def verification_code
+        @verification_code ||= generate_code
+      end
 
       def generate_code
         code = SecureRandom.random_number(10**auth_code_length).to_s
