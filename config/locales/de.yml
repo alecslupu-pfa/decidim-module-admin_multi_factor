@@ -5,18 +5,18 @@ de:
       admin:
         admin_multi_factor:
           elevate:
-            elevate_access: Elevate access rights
-            elevate_access_description: In order to access the admin panel, you need to elevate your access rights. Please select your method.
-            email: Email
+            elevate_access: Zugriffsrechte erhöhen
+            elevate_access_description: Um auf das Admin-Panel zuzugreifen, müssen Sie Ihre Zugriffsrechte erhöhen. Bitte wählen Sie Ihre Methode aus.
+            email: E-Mail
             sms: SMS
             webauthn: WebAuthn
           email:
-            copy: 'Copy this code:'
-            error: An error occurred which has been logged, please try again. If the error persists, please contact the platform support for further help.
-            expires_in: It will expire in %{time}.
+            copy: 'Kopieren Sie diesen Code:'
+            error: Ein Fehler ist aufgetreten und wurde protokolliert. Bitte versuchen Sie es erneut. Wenn der Fehler weiterhin besteht, wenden Sie sich bitte an den Plattform-Support, um weitere Unterstützung zu erhalten.
+            expires_in: Es läuft in %{time} ab.
             ignore_html: |-
-              If you didn't request this communication, please ignore this email.<br />
-              Your account won't be active until your account is fully confirmed.
+              Falls Sie diese Nachricht nicht angefordert haben, ignorieren Sie bitte diese E-Mail.<br />
+              Ihr Konto wird erst aktiviert, wenn es vollständig bestätigt wurde.
             subject: 'Your auth code is: %{verification}'
             subtitle: To finalize the authentication you just need to copy the 4 digit code below, go back to the %{organization} verification page and paste it!
             success: Verification code sent to %{email}.
@@ -42,7 +42,7 @@ de:
             inputs: digit number %{count}
             instruction: You should have received the code to %{contact_info}
             resend_code: Resend code
-            submit: Submit
+            submit: Absenden
             welcome: Welcome to the <br><strong>%{organization} platform!</strong>
         sms_strategy:
           sms:
